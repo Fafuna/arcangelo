@@ -309,8 +309,8 @@
       align-items: flex-start;
     }
     .card-icon {
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -318,6 +318,14 @@
       font-size: 1.4rem;
       flex-shrink: 0;
       font-weight: 700;
+      overflow: hidden;
+      background: var(--bg3);
+    }
+    .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .card-info { flex: 1; min-width: 0; }
     .card-title-row {
@@ -1239,6 +1247,7 @@
       {
         id: 25, name: "七日世界", nameEn: "Once Human",
         date: "2026-08-25", developer: "Starry Studio (网易)", publisher: "NetEase",
+        coverUrl: "https://cdn.akamai.steamstatic.com/steam/apps/2139460/library_600x900.jpg",
         genres: ["开放世界", "生存", "多人", "射击", "建造"], genreClass: "action",
         platforms: ["PS5"], price: "免费",
         chinese: true, hot: true,
@@ -1263,6 +1272,7 @@
       {
         id: 27, name: "卧龙：苍天陨落 完全版", nameEn: "Wo Long: Fallen Dynasty Complete Edition",
         date: "2026-09-03", developer: "Team NINJA (光荣特库摩)", publisher: "Koei Tecmo",
+        coverUrl: "https://cdn.akamai.steamstatic.com/steam/apps/1448440/library_600x900.jpg",
         genres: ["动作", "RPG", "暗黑", "三国", "类魂"], genreClass: "action",
         platforms: ["Switch 2"], price: "HK$478(约¥413)",
         chinese: true, hot: false,
@@ -1422,6 +1432,16 @@
       return '';
     }
 
+    // === Cover image helper ===
+    function getCoverUrl(g) {
+      if (g.coverUrl) return g.coverUrl;
+      if (g.officialUrl && g.officialUrl.indexOf('store.steampowered.com/app/') !== -1) {
+        var match = g.officialUrl.match(/app\/(\d+)/);
+        if (match) return 'https://cdn.akamai.steamstatic.com/steam/apps/' + match[1] + '/library_600x900.jpg';
+      }
+      return null;
+    }
+
     // === Render Grid ===
     function renderGrid(list) {
       var container = document.getElementById('game-grid');
@@ -1439,13 +1459,17 @@
         var heatStars = [1,2,3,4,5].map(function(n) {
           return '<span class="heat-star' + (n <= g.heatLevel ? '' : ' empty') + '">&#9733;</span>';
         }).join('');
+        var coverUrl = getCoverUrl(g);
+        var iconHtml = coverUrl
+          ? '<div class="card-icon"><img src="' + coverUrl + '" alt="" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'genre-' + g.genreClass + '\');this.parentNode.innerHTML=\'' + getGenreEmoji(g.genres[0]) + '\'"></div>'
+          : '<div class="card-icon genre-' + g.genreClass + '">' + getGenreEmoji(g.genres[0]) + '</div>';
         return '<div class="game-card' + (starred ? ' starred' : '') + '" data-id="' + g.id + '" onclick="openModal(' + g.id + ')">' +
           '<div class="priority-indicator ' + getPriorityClass(g.priority) + '"></div>' +
           '<button class="star-btn' + (starred ? ' active' : '') + '" onclick="event.stopPropagation();toggleStar(' + g.id + ')" title="' + (starred ? '取消关注' : '标记关注') + '">' +
             (starred ? '&#9733;' : '&#9734;') +
           '</button>' +
           '<div class="card-header">' +
-            '<div class="card-icon genre-' + g.genreClass + '">' + getGenreEmoji(g.genres[0]) + '</div>' +
+            iconHtml +
             '<div class="card-info">' +
               '<div class="card-title-row">' +
                 '<div class="card-title">' + g.name + '</div>' +

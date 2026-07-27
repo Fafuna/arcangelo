@@ -281,6 +281,41 @@
       box-shadow: 0 8px 30px rgba(108,92,231,0.12);
     }
     .game-card.starred { border-color: var(--accent4); }
+    .game-card.is-new-today {
+      border-color: var(--accent2);
+      box-shadow: 0 0 0 1px rgba(0,206,201,0.3), 0 4px 20px rgba(0,206,201,0.08);
+    }
+    .game-card.is-new-today:hover {
+      border-color: var(--accent2);
+      box-shadow: 0 8px 30px rgba(0,206,201,0.18);
+    }
+    .new-today-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 4;
+      background: linear-gradient(135deg, var(--accent2), #00b894);
+      color: #0b0e17;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem 0.3rem 0.5rem;
+      border-radius: 0 0 10px 0;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      animation: badge-glow 2s ease-in-out infinite;
+    }
+    @keyframes badge-glow {
+      0%, 100% { box-shadow: 0 0 6px rgba(0,206,201,0.4); }
+      50% { box-shadow: 0 0 14px rgba(0,206,201,0.7); }
+    }
+    .new-today-badge .pulse-dot {
+      width: 5px; height: 5px;
+      background: #0b0e17;
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
     .game-card .star-btn {
       position: absolute;
       top: 0.8rem;
@@ -1819,8 +1854,12 @@
         var bannerHtml = coverUrl
           ? '<div class="card-banner"><img src="' + coverUrl + '" alt="" loading="lazy" data-appid="' + appId + '" data-emoji="' + emoji + '" onerror="coverError(this)"></div>'
           : '<div class="card-banner"><div class="banner-fallback">' + emoji + '</div></div>';
-        return '<div class="game-card' + (starred ? ' starred' : '') + '" data-id="' + g.id + '" onclick="openModal(' + g.id + ')">' +
+        var newTodayHtml = g.isNewToday
+          ? '<div class="new-today-badge"><span class="pulse-dot"></span>今日新增</div>'
+          : '';
+        return '<div class="game-card' + (starred ? ' starred' : '') + (g.isNewToday ? ' is-new-today' : '') + '" data-id="' + g.id + '" onclick="openModal(' + g.id + ')">' +
           '<div class="priority-indicator ' + getPriorityClass(g.priority) + '"></div>' +
+          newTodayHtml +
           '<button class="star-btn' + (starred ? ' active' : '') + '" onclick="event.stopPropagation();toggleStar(' + g.id + ')" title="' + (starred ? '取消关注' : '标记关注') + '">' +
             (starred ? '&#9733;' : '&#9734;') +
           '</button>' +

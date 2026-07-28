@@ -965,7 +965,7 @@
 
     <!-- Update Bar -->
     <div class="update-bar">
-      数据更新时间：<strong>2026-07-27</strong> · 覆盖平台：Steam / PS5 / Switch / Xbox · 数据来源：SteamDB / 游戏官方公告 / 游戏媒体
+      数据更新时间：<strong>2026-07-28</strong> · 覆盖平台：Steam / PS5 / Switch / Xbox · 数据来源：SteamDB / 游戏官方公告 / 游戏媒体
     </div>
   </div>
 
@@ -993,130 +993,7 @@
   <script>
   (function() {
     // === Game Data ===
-    var games = [
-      // === 7月24日（发售3天内保留） ===
-      {
-        id: 11, name: "魔界战记 Mayhem", nameEn: "Disgaea Mayhem",
-        date: "2026-07-24", developer: "Nippon Ichi Software", publisher: "NIS America",
-        genres: ["动作RPG", "日式RPG"], genreClass: "rpg",
-        platforms: ["Steam", "PS5", "Switch"], price: "待确认",
-        chinese: true, hot: true,
-        desc: "《魔界战记》(Disgaea)系列全新力作，即刻开启魔力变身，通过反应灵敏、充满动作感的战斗亲身参与战斗。系列首次转型为动作RPG。",
-        priority: "high",
-        heatLevel: 4,
-        officialUrl: "https://store.steampowered.com/app/4402250/Disgaea_Mayhem/",
-        topicAngles: ["魔界战记系列转型动作RPG分析", "日式SRPG经典IP创新之路"]
-      },
-      {
-        id: 12, name: "渡渡鸭与折叠世界", nameEn: "Dodo Duckie",
-        date: "2026-07-24", developer: "待确认", publisher: "待确认",
-        genres: ["平台解谜", "冒险"], genreClass: "puzzle",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "2D世界的小鸭子Dodo戴上水豚先生的神奇帽子，跳进充满故障的3D维度，拯救被外星来客绑架的好朋友们。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/app/3358170/Dodo_Duckie/",
-        topicAngles: ["2D/3D维度切换平台游戏设计", "独立游戏可爱画风+硬核玩法反差"]
-      },
-      {
-        id: 13, name: "废品机械师 正式版", nameEn: "Scrap Mechanic",
-        date: "2026-07-24", developer: "Axolot Games", publisher: "Axolot Games",
-        genres: ["物理沙盒", "建造", "生存", "多人联机"], genreClass: "simulation",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: true,
-        desc: "结束长达十年的抢先体验，推出1.0正式版。物理沙盒多人建造生存游戏，玩家自由组装各种机械装置，体验从简单车辆到复杂自动化工厂的完整建造乐趣。",
-        priority: "medium",
-        heatLevel: 3,
-        officialUrl: "https://store.steampowered.com/app/387990/Scrap_Mechanic/",
-        topicAngles: ["十年抢先体验正式收官的意义", "物理沙盒建造游戏的持久魅力"]
-      },
-      {
-        id: 14, name: "侠影录", nameEn: "Xia Ying Lu",
-        date: "2026-07-24", developer: "朽木工作室", publisher: "噪点游戏 SERICA GAMES",
-        genres: ["动作角色扮演", "武侠", "动作"], genreClass: "action",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "中国风单机动作闯关游戏，以师门血仇与江湖诡局为核心叙事。玩家扮演身负师门血烬的侠士追查灭门惨案，卷入「永劫龙魁」焚天改命的阴谋。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/app/3863760/",
-        topicAngles: ["国产武侠动作游戏新作品鉴", "师门血仇叙事套路的创新空间"]
-      },
-      {
-        id: 15, name: "我的美味丈夫", nameEn: "My Tasty Husband",
-        date: "2026-07-24", developer: "劳斯麦斯 Rolls-Mice", publisher: "待确认",
-        genres: ["视觉小说", "心理恐怖", "悬疑"], genreClass: "visual-novel",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "国产独立悬疑视觉小说，围绕美食、亲密关系与死亡展开叙事。主角芽遭遇连环杀人案，现实与幻觉交织，玩家选择导向不同结局。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/",
-        topicAngles: ["美食+恐怖的独特叙事体验", "国产独立视觉小说题材创新"]
-      },
-      {
-        id: 16, name: "铜刀银剑", nameEn: "Copper Blade Silver Sword",
-        date: "2026-07-24", developer: "念绣科技", publisher: "待确认",
-        genres: ["武侠AVG", "文字剧情", "冒险"], genreClass: "adventure",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "北宋江湖背景的文字剧情向AVG，玩家扮演江湖刺榜第三的铜刀客，任务是刺杀奸相王安石。途中与正道剑圣、魔道妖女、在逃公主、花楼歌伎等不同身份的少女结识作伴。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/",
-        topicAngles: ["武侠题材文字冒险游戏叙事手法", "北宋历史背景游戏的考据与创作"]
-      },
-      {
-        id: 17, name: "深巷", nameEn: "The Alley",
-        date: "2026-07-24", developer: "待确认", publisher: "待确认",
-        genres: ["第一人称", "心理恐怖", "冒险探索"], genreClass: "horror",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "第一人称心理恐怖游戏，玩家在迷宫般的小巷中探索，利用相机分辨「鬼痕」与「幻象」，躲避恶鬼追击并寻找逃出生天的机会。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/",
-        topicAngles: ["国产心理恐怖游戏氛围营造手法", "相机机制在恐怖游戏中的应用"]
-      },
-      {
-        id: 18, name: "奶茶店模拟器", nameEn: "Boba Cafe Simulator",
-        date: "2026-07-24", developer: "待确认", publisher: "待确认",
-        genres: ["商店管理", "模拟经营", "烹饪"], genreClass: "simulation",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "重生题材奶茶店经营模拟游戏，最多支持8人合作经营。研发饮品配方、扩张门店、应对客流与外卖平台订单，打造属于你的奶茶商业帝国。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/app/3683770/Boba_Cafe_Simulator/",
-        topicAngles: ["奶茶店模拟经营游戏玩法解析", "多人合作经营类游戏社交乐趣"]
-      },
-      {
-        id: 19, name: "末日餐厅", nameEn: "Doomsday Diner",
-        date: "2026-07-24", developer: "待确认", publisher: "待确认",
-        genres: ["模拟", "烹饪", "战斗", "商店管理"], genreClass: "simulation",
-        platforms: ["Steam"], price: "待确认",
-        chinese: true, hot: false,
-        desc: "末日题材热狗店经营游戏，烹饪接单、打理店铺、击退掠夺者三合一玩法。在废土世界经营最后一家热狗餐厅，节奏轻松解压。",
-        priority: "low",
-        heatLevel: 2,
-        officialUrl: "https://store.steampowered.com/",
-        topicAngles: ["末日题材经营游戏的反差萌", "烹饪+战斗+经营三合一玩法分析"]
-      },
-      {
-        id: 20, name: "这龙带刀", nameEn: "Dinoblade",
-        date: "2026-07-24", developer: "Team Spino LLC", publisher: "Boltray Games",
-        genres: ["动作", "类魂", "Boss Rush", "恐龙"], genreClass: "action",
-        platforms: ["Steam"], price: "¥39.6(首发-10%)",
-        chinese: true, hot: false,
-        desc: "恐龙题材类魂动作RPG，玩家扮演持剑棘龙，在Boss Rush模式中挑战各种史前强敌。Steam热门即将推出前列，35名鉴赏家评测。",
-        priority: "medium",
-        heatLevel: 3,
-        officialUrl: "https://store.steampowered.com/app/3440070/Dinoblade/",
-        topicAngles: ["恐龙+类魂的独特组合创新", "独立Boss Rush游戏的市场定位"]
-      },
-      // === 7月27日（今日发售） ===
-      {
+    var games = [{
         id: 21, name: "遗落王国：瓦林的召唤", nameEn: "Forsaken Realms: Vahrin's Call",
         date: "2026-07-27", developer: "Titan Roc", publisher: "Titan Roc",
         genres: ["动作RPG", "奇幻", "黑暗奇幻"], genreClass: "rpg",
@@ -1127,8 +1004,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/app/951770/Forsaken_Realms_Vahrins_Call/",
         topicAngles: ["独立黑暗奇幻ARPG新品观察", "地下城探索类游戏玩法演进"]
-      },
-      {
+      }
+{
         id: 22, name: "末日生还者", nameEn: "The Left Behind",
         date: "2026-07-27", developer: "Extrude", publisher: "Extrude",
         genres: ["生存", "后末日", "僵尸", "动作"], genreClass: "action",
@@ -1139,9 +1016,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/app/2433630/The_Left_Behind/",
         topicAngles: ["后末日生存游戏市场饱和度分析", "僵尸题材游戏的创新方向"]
-      },
-      // === 7月28日 ===
-      {
+      }
+{
         id: 23, name: "光环：战役进化", nameEn: "Halo: Campaign Evolved",
         date: "2026-07-28", developer: "Halo Studios", publisher: "Xbox Game Studios",
         genres: ["第一人称射击", "科幻", "动作", "合作"], genreClass: "shooter",
@@ -1152,9 +1028,8 @@
         heatLevel: 5,
         officialUrl: "https://store.steampowered.com/app/2806050/Halo_Campaign_Evolved/",
         topicAngles: ["光环首登PS5：Xbox独占时代的终结", "虚幻5重制经典FPS的技术对比", "首发加入XGP对游戏销量的影响"]
-      },
-      // === 7月29日 ===
-      {
+      }
+{
         id: 24, name: "雾影猎人", nameEn: "Mistfall Hunter",
         date: "2026-07-29", developer: "Bellring Games", publisher: "Skystone Games",
         genres: ["动作", "PvPvE", "搜打撤", "多人合作", "黑暗奇幻"], genreClass: "action",
@@ -1165,8 +1040,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/3282300/Mistfall_Hunter/",
         topicAngles: ["搜打撤品类新品Steam新品节表现", "国产虚幻5动作游戏技术展示", "PvPvE模式设计深度分析"]
-      },
-      {
+      }
+{
         id: 25, name: "异世界卡车神暗中助我", nameEn: "Isekai Truck God",
         date: "2026-07-29", developer: "独立游戏工作室", publisher: "待确认",
         genres: ["动作冒险", "异世界", "搞笑"], genreClass: "adventure",
@@ -1177,9 +1052,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/",
         topicAngles: ["异世界题材游戏的创新玩法", "无厘头搞笑独立游戏的市场潜力"]
-      },
-      // === 7月30日 ===
-      {
+      }
+{
         id: 26, name: "新国家号：圣礼", nameEn: "SENARA: The Sacrament",
         date: "2026-07-30", developer: "Influsion Inc.", publisher: "Influsion Inc.",
         genres: ["第一人称", "恐怖", "生存", "解谜"], genreClass: "horror",
@@ -1190,8 +1064,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/app/3915120/SENARA_The_Sacrament/",
         topicAngles: ["封闭空间生存恐怖游戏设计", "船只题材恐怖游戏对比分析"]
-      },
-      {
+      }
+{
         id: 27, name: "英雄连3：最后防线", nameEn: "Company of Heroes 3: Final Stand",
         date: "2026-07-30", developer: "Relic Entertainment", publisher: "Relic Entertainment",
         genres: ["策略", "Roguelite", "波次防御", "二战"], genreClass: "strategy",
@@ -1202,8 +1076,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/4836540/Company_of_Heroes_3_Final_Stand/",
         topicAngles: ["RTS+塔防的混合品类创新", "英雄连IP拓展方向观察"]
-      },
-      {
+      }
+{
         id: 28, name: "牧场主", nameEn: "The Ranchers",
         date: "2026-07-30", developer: "The Ranchers", publisher: "Trophy Games",
         genres: ["模拟", "角色扮演", "农场模拟", "开放世界"], genreClass: "simulation",
@@ -1214,8 +1088,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/app/1501310/The_Ranchers/",
         topicAngles: ["开放世界农场模拟游戏对比", "多人联机农场游戏社交乐趣"]
-      },
-      {
+      }
+{
         id: 29, name: "库桑：狼之城", nameEn: "Kusan: City of Wolves",
         date: "2026-07-30", developer: "独立开发团队", publisher: "待确认",
         genres: ["俯视角射击", "硬核动作", "Roguelite"], genreClass: "shooter",
@@ -1226,9 +1100,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/",
         topicAngles: ["俯视角射击游戏硬核设计哲学", "迈阿密热线精神续作玩法对比"]
-      },
-      // === 7月31日 ===
-      {
+      }
+{
         id: 30, name: "纵横秘湾", nameEn: "Corsair Cove",
         date: "2026-07-31", developer: "Limbic Entertainment", publisher: "Hooded Horse",
         genres: ["模拟", "策略", "城市建造", "海盗"], genreClass: "strategy",
@@ -1239,8 +1112,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/1368140/Corsair_Cove/",
         topicAngles: ["海盗题材城市建造游戏玩法解析", "Limbic Entertainment策略游戏功力", "城市建造+大战略融合创新"]
-      },
-      {
+      }
+{
         id: 31, name: "战利品契约", nameEn: "Loot Covenant",
         date: "2026-07-31", developer: "独立开发团队", publisher: "待确认",
         genres: ["战术RPG", "Roguelike", "战利品管理"], genreClass: "strategy",
@@ -1251,8 +1124,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/",
         topicAngles: ["战术RPG+战利品管理融合创新", "肉鸽游戏背包管理机制深度分析"]
-      },
-      {
+      }
+{
         id: 32, name: "遗迹：第一守护者", nameEn: "The Relic: First Guardian",
         date: "2026-07-31", developer: "Project Cloud Games", publisher: "Perp Games",
         genres: ["类魂", "动作RPG", "黑暗奇幻", "半开放世界"], genreClass: "action",
@@ -1263,9 +1136,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/1845250/The_Relic_First_Guardian/",
         topicAngles: ["韩国类魂新秀：舍弃等级系统的创新设计", "70+ Boss战的半开放世界动作RPG前瞻", "PS5限时独占策略对多平台发售的影响"]
-      },
-      // === 8月4日 ===
-      {
+      }
+{
         id: 33, name: "轮回之兽", nameEn: "Beast of Reincarnation",
         date: "2026-08-04", developer: "Game Freak", publisher: "Game Freak",
         genres: ["动作RPG", "回合制", "冒险"], genreClass: "rpg",
@@ -1276,8 +1148,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/2001760/Beast_of_Reincarnation/",
         topicAngles: ["Game Freak脱离宝可梦的首个原创IP", "即时动作+回合制混合战斗系统解析", "一人一犬协同玩法创新", "首发XGP对独立IP曝光的加持"]
-      },
-      {
+      }
+{
         id: 34, name: "Big Walk", nameEn: "Big Walk",
         date: "2026-08-04", developer: "House House", publisher: "Panic",
         genres: ["冒险", "在线合作", "解谜"], genreClass: "adventure",
@@ -1288,8 +1160,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/1478500/Big_Walk/",
         topicAngles: ["无题鹅游戏团队新作玩法前瞻", "开放世界合作冒险游戏设计趋势", "空间语音系统对多人游戏体验的提升"]
-      },
-      {
+      }
+{
         id: 35, name: "最终幻想14 Switch 2版", nameEn: "Final Fantasy XIV for Switch 2",
         date: "2026-08-04", developer: "Square Enix", publisher: "Square Enix",
         genres: ["MMORPG", "奇幻", "多人在线"], genreClass: "rpg",
@@ -1300,9 +1172,8 @@
         heatLevel: 4,
         officialUrl: "https://www.finalfantasyxiv.com/",
         topicAngles: ["MMORPG登陆Switch 2的技术挑战与机遇", "FF14跨平台生态布局分析", "任天堂主机MMO市场潜力"]
-      },
-      // === 8月6日 ===
-      {
+      }
+{
         id: 36, name: "漫威斗魂", nameEn: "MARVEL Tokon: Fighting Souls",
         date: "2026-08-06", developer: "Arc System Works", publisher: "PlayStation Studios",
         genres: ["2D格斗", "4v4团队对战", "漫威"], genreClass: "fighting",
@@ -1313,8 +1184,8 @@
         heatLevel: 5,
         officialUrl: "https://store.steampowered.com/app/3787240/MARVEL_Tkon_Fighting_Souls/",
         topicAngles: ["Arc System Works x 漫威：格斗游戏新标杆", "4v4团队格斗模式深度前瞻", "漫威IP游戏2026全线盘点", "格斗游戏年度最大事件热度分析"]
-      },
-      {
+      }
+{
         id: 37, name: "水豚漂流记", nameEn: "Capy Castaway",
         date: "2026-08-06", developer: "Kitten Cup Studio", publisher: "Big Blue Sky Games",
         genres: ["冒险解谜", "治愈", "叙事驱动"], genreClass: "adventure",
@@ -1325,9 +1196,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/",
         topicAngles: ["治愈系冒险游戏的市场需求", "水豚题材游戏为何受欢迎"]
-      },
-      // === 8月7日 ===
-      {
+      }
+{
         id: 38, name: "远征军：武士", nameEn: "Expeditions: Samurai",
         date: "2026-08-07", developer: "Campfire Cabal", publisher: "THQ Nordic",
         genres: ["回合制RPG", "策略", "小队战术"], genreClass: "strategy",
@@ -1338,8 +1208,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/2212910/Expeditions_Samurai/",
         topicAngles: ["远征军系列战国新作前瞻", "回合制策略+在线合作融合", "战国时代欧洲人视角叙事"]
-      },
-      {
+      }
+{
         id: 39, name: "铁巢重炮", nameEn: "IRON NEST: Heavy Turret Simulator",
         date: "2026-08-07", developer: "待确认", publisher: "待确认",
         genres: ["军事战争", "柴油朋克", "火炮模拟"], genreClass: "simulation",
@@ -1350,9 +1220,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/2950790/IRON_NEST_Heavy_Turret_Simulator/",
         topicAngles: ["硬核军事模拟器独立游戏崛起", "柴油朋克美学在游戏中的应用", "新品节黑马：小众模拟品类的爆发"]
-      },
-      // === 8月10日 ===
-      {
+      }
+{
         id: 40, name: "暗星铁律", nameEn: "Pax Autocratica",
         date: "2026-08-10", developer: "待确认", publisher: "待确认",
         genres: ["Roguelike", "FPS", "基地建造"], genreClass: "shooter",
@@ -1363,9 +1232,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/app/1067360/Pax_Autocratica/",
         topicAngles: ["Roguelike+FPS+建造三合一玩法分析", "独立游戏混合类型创新趋势"]
-      },
-      // === 8月11日 ===
-      {
+      }
+{
         id: 41, name: "秘奥回声", nameEn: "Echoes of Mystralia",
         date: "2026-08-11", developer: "Borealys Games", publisher: "Borealys Games",
         genres: ["动作冒险", "法术自定义", "Roguelite"], genreClass: "adventure",
@@ -1376,8 +1244,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/app/974480/Echoes_of_Mystralia/",
         topicAngles: ["法术自定义系统的设计深度", "魔法题材Roguelite游戏对比"]
-      },
-      {
+      }
+{
         id: 42, name: "RIFTSTORM", nameEn: "RIFTSTORM",
         date: "2026-08-11", developer: "Confiction Labs", publisher: "Confiction Labs",
         genres: ["动作RPG", "合作掠夺射击", "刷宝"], genreClass: "shooter",
@@ -1388,9 +1256,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/2282790/RIFTSTORM/",
         topicAngles: ["合作掠夺射击游戏新入局者", "神话题材+刷宝射击融合创新"]
-      },
-      // === 8月13日 ===
-      {
+      }
+{
         id: 43, name: "黑心装修队", nameEn: "Low-Budget Repairs",
         date: "2026-08-13", developer: "待确认", publisher: "待确认",
         genres: ["模拟经营", "装修", "黑色幽默"], genreClass: "simulation",
@@ -1401,9 +1268,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/",
         topicAngles: ["黑色幽默模拟游戏的创意边界", "反英雄题材游戏的市场接受度"]
-      },
-      // === 8月14日 ===
-      {
+      }
+{
         id: 44, name: "人间地狱：越南", nameEn: "Hell Let Loose: Vietnam",
         date: "2026-08-14", developer: "Expression Games / cdth Games", publisher: "Team 17",
         genres: ["第一人称射击", "战争模拟", "多人", "拟真"], genreClass: "shooter",
@@ -1414,9 +1280,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/3079210/Hell_Let_Loose_Vietnam/",
         topicAngles: ["50v50拟真FPS越南战争新战场", "《人间地狱》系列进化之路", "大战场军事射击游戏2026竞争格局"]
-      },
-      // === 8月15日 ===
-      {
+      }
+{
         id: 45, name: "送葬季", nameEn: "Grave Seasons",
         date: "2026-08-15", developer: "Perfect Garbage", publisher: "Blumhouse Games",
         genres: ["恐怖", "农场模拟", "悬疑", "推理"], genreClass: "simulation",
@@ -1427,9 +1292,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/2581810/Grave_Seasons/",
         topicAngles: ["狼人杀+种田+推理三合一创新", "恐怖与农场模拟的反差美学", "Blumhouse Games独立发行策略", "40万愿望单独立游戏的成功密码"]
-      },
-      // === 8月18日 ===
-      {
+      }
+{
         id: 46, name: "沉没之城2", nameEn: "The Sinking City 2",
         date: "2026-08-18", developer: "Frogwares", publisher: "Frogwares",
         genres: ["第三人称", "生存恐怖", "克苏鲁", "动作射击"], genreClass: "horror",
@@ -1440,9 +1304,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/2825860/The_Sinking_City_2/",
         topicAngles: ["克苏鲁神话游戏改编的演进", "沉没之城系列从侦探到生存恐怖的转型", "Frogwares虚幻5技术实力展示"]
-      },
-      // === 8月19日 ===
-      {
+      }
+{
         id: 47, name: "暗黑地牢：烈焰之边", nameEn: "Darkest Dungeon: The Fire's Edge",
         date: "2026-08-19", developer: "Red Hook Studios", publisher: "Red Hook Studios",
         genres: ["回合制RPG", "策略", "Roguelike", "DLC"], genreClass: "strategy",
@@ -1453,8 +1316,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/4964110/Darkest_Dungeon_The_Fires_Edge/",
         topicAngles: ["暗黑地牢新DLC内容深度解析", "经典Roguelike RPG的长期运营策略"]
-      },
-      {
+      }
+{
         id: 48, name: "命运石之门 RE:BOOT", nameEn: "STEINS;GATE RE:BOOT",
         date: "2026-08-19", developer: "MAGES.", publisher: "Spike Chunsoft",
         genres: ["视觉小说", "剧情", "多结局", "科幻"], genreClass: "visual-novel",
@@ -1465,9 +1328,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/4012810/STEINSGATE_REBOOT/",
         topicAngles: ["经典科幻视觉小说完全重制版前瞻", "命运石之门γ世界线新剧情解析", "视觉小说重制化趋势观察", "科学ADV系列的未来走向"]
-      },
-      // === 8月20日 ===
-      {
+      }
+{
         id: 49, name: "致命躯壳 II", nameEn: "Mortal Shell II",
         date: "2026-08-20", developer: "Cold Symmetry", publisher: "PlayStack",
         genres: ["类魂", "动作", "黑暗奇幻", "开放世界"], genreClass: "action",
@@ -1478,9 +1340,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/2584270/Mortal_Shell_II/",
         topicAngles: ["类魂游戏「换皮套」系统的进化", "取消耐力条对类魂战斗的影响", "60+地牢开放世界类魂探索"]
-      },
-      // === 8月25日 ===
-      {
+      }
+{
         id: 50, name: "七日世界 PS5版", nameEn: "Once Human",
         date: "2026-08-25", developer: "Starry Studio (网易)", publisher: "NetEase",
         genres: ["开放世界", "生存", "多人", "射击", "建造"], genreClass: "action",
@@ -1491,9 +1352,8 @@
         heatLevel: 4,
         officialUrl: "https://www.oncehuman.game/",
         topicAngles: ["PS5版首日体验：主机端画质与操作手感对比PC版差异", "免费生存游戏登陆主机能否复制PC端成功", "网易出海主机市场战略观察"]
-      },
-      // === 8月26日 ===
-      {
+      }
+{
         id: 51, name: "幻想大陆战记：深渊", nameEn: "BRIGANDINE ABYSS",
         date: "2026-08-26", developer: "adglobe", publisher: "NIS America",
         genres: ["战棋", "SRPG", "奇幻"], genreClass: "strategy",
@@ -1504,9 +1364,8 @@
         heatLevel: 3,
         officialUrl: "https://store.steampowered.com/app/2420370/BRIGANDINE_ABYSS/",
         topicAngles: ["经典战棋IP回归市场分析", "日式SRPG在2026年的生存空间"]
-      },
-      // === 8月27日 ===
-      {
+      }
+{
         id: 52, name: "合金装备：大师合集 Vol.2", nameEn: "METAL GEAR SOLID: MASTER COLLECTION Vol.2",
         date: "2026-08-27", developer: "Konami", publisher: "Konami",
         genres: ["潜行动作", "冒险", "合集"], genreClass: "collection",
@@ -1517,8 +1376,8 @@
         heatLevel: 5,
         officialUrl: "https://store.steampowered.com/app/3859630/METAL_GEAR_SOLID_MASTER_COLLECTION_Vol2/",
         topicAngles: ["MGS4等经典三部曲PC首发热度分析", "Konami经典IP重发行策略观察", "潜行玩法鼻祖的现代价值重估", "合集游戏的性价比与收藏价值"]
-      },
-      {
+      }
+{
         id: 53, name: "星球大战 零号连队", nameEn: "STAR WARS Zero Company",
         date: "2026-08-27", developer: "Bit Reactor / Respawn", publisher: "EA",
         genres: ["回合制策略", "战术", "RPG", "星战"], genreClass: "strategy",
@@ -1529,9 +1388,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/2075800/STAR_WARS_Zero_Company/",
         topicAngles: ["星战版XCOM：回合制策略+星战IP化学反应", "幽浮开发者新作前瞻", "EA星战游戏产品线盘点"]
-      },
-      // === 8月28日 ===
-      {
+      }
+{
         id: 54, name: "共鸣：瘟疫传说传承", nameEn: "Resonance: A Plague Tale Legacy",
         date: "2026-08-28", developer: "Asobo Studio", publisher: "Focus Entertainment",
         genres: ["动作冒险", "潜行", "解谜", "剑斗"], genreClass: "adventure",
@@ -1542,8 +1400,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/2713000/Resonance_A_Plague_Tale_Legacy/",
         topicAngles: ["瘟疫传说系列前传世界观扩展", "Asobo Studio叙事冒险进化", "从潜行到动作：系列玩法转型分析", "首发XGP对叙事游戏销量的影响"]
-      },
-      {
+      }
+{
         id: 55, name: "队长小翼2 世界群星", nameEn: "CAPTAIN TSUBASA 2: WORLD FIGHTERS",
         date: "2026-08-28", developer: "待确认", publisher: "待确认",
         genres: ["体育", "足球", "动漫改编", "RPG"], genreClass: "simulation",
@@ -1554,9 +1412,8 @@
         heatLevel: 2,
         officialUrl: "https://store.steampowered.com/",
         topicAngles: ["足球小将IP游戏系列进化史", "漫改体育游戏的玩法创新方向"]
-      },
-      // === 9月3日 ===
-      {
+      }
+{
         id: 56, name: "黎明行者之血", nameEn: "The Blood of Dawnwalker",
         date: "2026-09-03", developer: "Rebel Wolves", publisher: "Bandai Namco Entertainment",
         genres: ["动作", "RPG", "开放世界", "黑暗奇幻", "吸血鬼"], genreClass: "rpg",
@@ -1567,8 +1424,8 @@
         heatLevel: 5,
         officialUrl: "https://store.steampowered.com/app/2521770/The_Blood_of_Dawnwalker/",
         topicAngles: ["前《巫师3》总监新作能否再造东欧RPG辉煌", "吸血鬼题材开放世界RPG核心玩法解析", "2026年9月最值得期待的新IP", "200万愿望单的热度密码"]
-      },
-      {
+      }
+{
         id: 57, name: "卧龙：苍天陨落 完全版", nameEn: "Wo Long: Fallen Dynasty Complete Edition",
         date: "2026-09-03", developer: "Team NINJA (光荣特库摩)", publisher: "Koei Tecmo",
         genres: ["动作", "RPG", "暗黑", "三国", "类魂"], genreClass: "action",
@@ -1579,9 +1436,8 @@
         heatLevel: 2,
         officialUrl: "https://www.koeitecmo.com/wo-long/",
         topicAngles: ["Switch 2版完全版评测：掌机魂系体验", "从PS5到Switch 2：多平台画质与性能对比"]
-      },
-      // === 9月4日 ===
-      {
+      }
+{
         id: 58, name: "鬼武者：剑之道", nameEn: "Onimusha: Way of the Sword",
         date: "2026-09-04", developer: "Capcom (卡普空)", publisher: "Capcom (卡普空)",
         genres: ["动作", "冒险", "日本历史", "斩击"], genreClass: "action",
@@ -1592,8 +1448,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/2638890/_Way_of_the_Sword/",
         topicAngles: ["卡普空经典IP复活能否再创辉煌", "反向跳票提前三周发售卡普空信心何在", "和风斩击vs对马岛之魂：日本题材动作游戏对比"]
-      },
-      {
+      }
+{
         id: 59, name: "NBA 2K27", nameEn: "NBA 2K27",
         date: "2026-09-04", developer: "Visual Concepts", publisher: "2K Games",
         genres: ["体育", "篮球", "模拟"], genreClass: "simulation",
@@ -1604,9 +1460,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/4356430/NBA_2K27/",
         topicAngles: ["年度更新前瞻：文班亚马封面球星带来的新玩法", "年货体育游戏各版本性价比分析"]
-      },
-      // === 9月8日 ===
-      {
+      }
+{
         id: 60, name: "万圣节：游戏", nameEn: "Halloween: The Game",
         date: "2026-09-08", developer: "IllFonic / Gun Interactive", publisher: "IllFonic Publishing",
         genres: ["恐怖", "非对称对抗", "多人", "生存"], genreClass: "horror",
@@ -1617,9 +1472,8 @@
         heatLevel: 4,
         officialUrl: "https://store.steampowered.com/app/3219630/Halloween/",
         topicAngles: ["经典恐怖电影IP改编游戏深度体验", "非对称恐怖品类进化：从黎明杀机到万圣节沙盒", "发售恰逢万圣节季节恐怖游戏氛围营销话题"]
-      },
-      // === 9月15日 ===
-      {
+      }
+{
         id: 61, name: "漫威金刚狼", nameEn: "Marvel's Wolverine",
         date: "2026-09-15", developer: "Insomniac Games", publisher: "PlayStation Studios",
         genres: ["动作冒险", "超级英雄", "剧情"], genreClass: "action",
@@ -1630,9 +1484,8 @@
         heatLevel: 5,
         officialUrl: "https://insomniac.games/",
         topicAngles: ["Insomniac漫威宇宙新篇章：金刚狼能否超越蜘蛛侠", "PS5年度独占旗舰大作深度前瞻", "超级英雄游戏从开放世界回归线性叙事的意义", "金刚狼IP游戏化的历史与未来"]
-      },
-      // === 9月17日 ===
-      {
+      }
+{
         id: 62, name: "英雄传说：空之轨迹 the 2nd 重制版", nameEn: "The Legend of Heroes: Trails in the Sky the 2nd",
         date: "2026-09-17", developer: "Falcom", publisher: "Falcom",
         genres: ["回合制RPG", "日式RPG", "剧情"], genreClass: "rpg",
@@ -1643,9 +1496,8 @@
         heatLevel: 3,
         officialUrl: "https://www.falcom.co.jp/",
         topicAngles: ["轨迹系列经典重制的情怀与创新", "日式RPG重制版市场观察"]
-      },
-      // === 9月24日 ===
-      {
+      }
+{
         id: 63, name: "控制：共振", nameEn: "Control: Resonant",
         date: "2026-09-24", developer: "Remedy Entertainment", publisher: "505 Games",
         genres: ["动作冒险", "超自然", "射击"], genreClass: "action",
@@ -1656,8 +1508,8 @@
         heatLevel: 4,
         officialUrl: "https://www.remedygames.com/",
         topicAngles: ["控制续作前瞻：超自然动作游戏的新高度", "Remedy连接宇宙布局深度解析", "9月24日双雄对决：控制vs寂静岭"]
-      },
-      {
+      }
+{
         id: 64, name: "寂静岭：小镇陷落", nameEn: "Silent Hill: Townfall",
         date: "2026-09-24", developer: "No Code / Annapurna Interactive", publisher: "Konami",
         genres: ["心理恐怖", "冒险", "解谜"], genreClass: "horror",
@@ -1668,9 +1520,8 @@
         heatLevel: 4,
         officialUrl: "https://www.konami.com/",
         topicAngles: ["寂静岭IP复兴之路：从P.T.到Townfall", "心理恐怖游戏的叙事与氛围营造", "9月24日双雄对决：恐怖vs动作"]
-      },
-      // === 9月30日 ===
-      {
+      }
+{
         id: 65, name: "我的世界：地下城2", nameEn: "Minecraft Dungeons II",
         date: "2026-09-30", developer: "Mojang Studios / Double Eleven", publisher: "Xbox Game Studios",
         genres: ["动作RPG", "地牢探险", "合作"], genreClass: "rpg",
@@ -1681,6 +1532,169 @@
         heatLevel: 4,
         officialUrl: "https://www.minecraft.net/",
         topicAngles: ["我的世界IP扩展：从沙盒到动作RPG", "休闲向刷宝游戏的市场定位", "全平台发售的合家欢游戏潜力"]
+      }
+
+      // === 2026-08-04 ===
+      {
+        id: 66, name: "地狱仆从II：神罚降临", nameEn: "HellSlave II: Judgment of the Archon",
+        date: "2026-08-04", developer: "Ars Goetia", publisher: "Ars Goetia",
+        genres: ["地牢探索", "黑暗奇幻", "Roguelite"], genreClass: "rpg",
+        platforms: ["Steam"], price: "待确认",
+        chinese: true, hot: false,
+        desc: "黑暗奇幻地牢探索Roguelite续作，玩家扮演被古代神灵选中的仆从，在随机生成的地下城中战斗。继承前作硬核难度，新增多分支剧情与动态难度系统。",
+        priority: "low",
+        heatLevel: 2,
+        officialUrl: "https://store.steampowered.com/app/3399900/",
+        topicAngles: ["黑暗奇幻Roguelite续作玩法演进", "独立游戏硬核难度设计哲学"],
+        isNewToday: true
+      }
+
+      // === 2026-08-06 ===
+      {
+        id: 67, name: "匹诺曹的谎言：完全版", nameEn: "Lies of P: Complete Edition",
+        date: "2026-08-06", developer: "Neowiz", publisher: "Neowiz",
+        genres: ["类魂", "动作RPG", "黑暗奇幻"], genreClass: "action",
+        platforms: ["Switch 2"], price: "待确认",
+        chinese: true, hot: true,
+        desc: "2023年黑马类魂游戏《匹诺曹的谎言》完全版登陆Switch 2，收录本体与DLC《序曲》及全部更新内容。以黑暗童话风格的克拉特城为背景，精致武器组装系统与谎言机制深受玩家好评。",
+        priority: "medium",
+        heatLevel: 3,
+        officialUrl: "https://store.steampowered.com/app/1627720/Lies_of_P/",
+        topicAngles: ["匹诺曹的谎言Switch 2版移植表现", "黑马类魂游戏的长期生命力"],
+        isNewToday: true
+      }
+
+      // === 2026-08-12 ===
+      {
+        id: 68, name: "烽沙", nameEn: "Fengsha",
+        date: "2026-08-12", developer: "Digital Sky (金乌工作室)", publisher: "Digital Sky",
+        genres: ["SLG", "战争模拟", "东方历史", "建造"], genreClass: "strategy",
+        platforms: ["Steam", "Epic"], price: "待确认",
+        chinese: true, hot: false,
+        desc: "春秋战国背景的东方战争建造模拟SLG，抢先体验(EA)上线。玩家经营城池、招募名将、合纵连横，在沙盘大地图上体验诸侯争霸。",
+        priority: "medium",
+        heatLevel: 2,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["春秋战国SLG差异化竞争策略", "国产历史策略游戏出海前景"],
+        isNewToday: true
+      }
+
+      // === 2026-08-13 ===
+      {
+        id: 69, name: "长日将尽", nameEn: "Duskfade",
+        date: "2026-08-13", developer: "Weird Beluga Studio", publisher: "Fireshine Games",
+        genres: ["3D动作冒险", "平台跳跃", "探索"], genreClass: "adventure",
+        platforms: ["Steam", "PS5", "Xbox"], price: "待确认",
+        chinese: true, hot: false,
+        desc: "3D动作冒险平台游戏，在即将消逝的黄昏世界中探索，解开古老文明的谜团。强调流畅的平台跳跃与轻度战斗，唯美艺术风格。",
+        priority: "low",
+        heatLevel: 2,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["3D平台跳跃游戏复兴趋势", "唯美艺术风格独立游戏市场观察"],
+        isNewToday: true
+      },
+      {
+        id: 70, name: "装甲骑士：指挥官完整版", nameEn: "Panzer Knights: Commander's Edition",
+        date: "2026-08-13", developer: "Kunpo Games", publisher: "Kunpo Games",
+        genres: ["坦克模拟", "动作", "军事"], genreClass: "simulation",
+        platforms: ["PS5", "Xbox"], price: "待确认",
+        chinese: true, hot: false,
+        desc: "二战题材坦克动作游戏完整版，登陆主机平台。玩家驾驶历史上经典坦克参与战役，强调战术配合与载具改装。",
+        priority: "low",
+        heatLevel: 2,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["二战坦克模拟游戏主机版表现", "军事模拟游戏小众市场分析"],
+        isNewToday: true
+      }
+
+      // === 2026-08-14 ===
+      {
+        id: 71, name: "Madden NFL 27", nameEn: "Madden NFL 27",
+        date: "2026-08-14", developer: "EA Tiburon", publisher: "EA Sports",
+        genres: ["体育", "美式橄榄球", "模拟"], genreClass: "simulation",
+        platforms: ["Steam", "PS5", "Xbox"], price: "待确认",
+        chinese: false, hot: false,
+        desc: "EA年度美式橄榄球模拟游戏最新作，改进球员AI与物理碰撞系统，新增 franchise 模式深度与终极球队内容。",
+        priority: "low",
+        heatLevel: 2,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["年货体育游戏技术迭代方向", "EA Sports系列年更模式市场策略"],
+        isNewToday: true
+      }
+
+      // === 2026-08-19 ===
+      {
+        id: 72, name: "仁王3：庆安地狱变", nameEn: "Nioh 3 - Keian Jigokuhen",
+        date: "2026-08-19", developer: "Team NINJA", publisher: "Koei Tecmo",
+        genres: ["动作RPG", "类魂", "日本历史", "DLC"], genreClass: "action",
+        platforms: ["PS5"], price: "待确认",
+        chinese: true, hot: true,
+        desc: "《仁王3》首个大型DLC，背景设定在庆安年间的新战场。新增武器种类、妖怪与地图区域，延续高速动作与残心系统的核心体验。",
+        priority: "medium",
+        heatLevel: 3,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["仁王3 DLC内容深度解析", "Team NINJA动作系统进化之路"],
+        isNewToday: true
+      }
+
+      // === 2026-08-25 ===
+      {
+        id: 73, name: "异形：火力小队精英2", nameEn: "Aliens: Fireteam Elite 2",
+        date: "2026-08-25", developer: "Cold Iron Studios", publisher: "Daybreak Game Company",
+        genres: ["合作射击", "第三人称", "科幻", "恐怖"], genreClass: "shooter",
+        platforms: ["Steam", "PS5", "Xbox"], price: "待确认",
+        chinese: true, hot: false,
+        desc: "《异形：火力小队精英》续作，3人合作第三人称射击游戏。在异形宇宙中执行危险任务，丰富的职业Build与武器自定义系统。",
+        priority: "medium",
+        heatLevel: 3,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["异形IP合作射击游戏进化方向", "三人合作射击品类市场观察"],
+        isNewToday: true
+      }
+
+      // === 2026-08-28 ===
+      {
+        id: 74, name: "艾尔登法环：褪色者版", nameEn: "Elden Ring: Tarnished Edition",
+        date: "2026-08-28", developer: "FromSoftware", publisher: "Bandai Namco",
+        genres: ["动作RPG", "开放世界", "类魂"], genreClass: "rpg",
+        platforms: ["Switch 2"], price: "$79.99",
+        chinese: true, hot: true,
+        desc: "《艾尔登法环》Switch 2完全版，收录本体与大型DLC《黄金树幽影》及全新防具套装。玩家可在掌机模式下探索交界地的广阔开放世界，体验FromSoftware魂系巅峰之作。",
+        priority: "high",
+        heatLevel: 5,
+        officialUrl: "https://store.steampowered.com/app/1245620/ELDEN_RING/",
+        topicAngles: ["艾尔登法环登陆Switch 2的移植技术挑战", "FromSoftware掌机体验优化分析", "黄金树幽影DLC完整版价值评估"],
+        isNewToday: true
+      }
+
+      // === 2026-09-25 ===
+      {
+        id: 75, name: "EA Sports FC 27", nameEn: "EA Sports FC 27",
+        date: "2026-09-25", developer: "EA Vancouver", publisher: "EA Sports",
+        genres: ["体育", "足球", "模拟"], genreClass: "simulation",
+        platforms: ["Steam", "PS5", "Xbox", "Switch 2"], price: "¥248",
+        chinese: true, hot: true,
+        desc: "EA年度足球模拟游戏最新作，改进HyperMotionV技术，增强球员触球真实感。新增女子职业俱乐部模式与扩展的终极球队内容，PC版首次达到与主机版同等规格。",
+        priority: "medium",
+        heatLevel: 4,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["FC 27技术升级与玩法改进盘点", "年货足球游戏的创新瓶颈与突破"],
+        isNewToday: true
+      }
+
+      // === 2026-09-29 ===
+      {
+        id: 76, name: "尼瓦利斯之夜", nameEn: "Nivalis Nights",
+        date: "2026-09-29", developer: "Ion Lands", publisher: "505 Games",
+        genres: ["生活模拟", "赛博朋克", "经营"], genreClass: "simulation",
+        platforms: ["Steam"], price: "待确认",
+        chinese: true, hot: false,
+        desc: "赛博朋克风格生活模拟游戏，在云端城市尼瓦利斯经营自己的餐厅与住所。接取任务、结识角色、探索城市秘密，体验独特的霓虹美学与慢节奏生活。",
+        priority: "low",
+        heatLevel: 2,
+        officialUrl: "https://store.steampowered.com/",
+        topicAngles: ["赛博朋克生活模拟的差异化定位", "Ion Lands云端朋克美学风格解析"],
+        isNewToday: true
       }
     ];
 

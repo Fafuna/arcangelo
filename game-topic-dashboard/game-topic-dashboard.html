@@ -575,6 +575,83 @@
     .timeline-heat .heat-star.empty { color: var(--rule); }
     .timeline-heat .heat-text { font-size: 0.7rem; color: var(--muted); margin-left: 0.2rem; }
 
+    /* === News Section === */
+    .news-section { margin-top: 1.2rem; }
+    .news-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+    .news-item {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      background: var(--bg3); border-radius: 8px; padding: 0.7rem 0.9rem;
+      border: 1px solid var(--rule); transition: all 0.2s;
+    }
+    .news-item:hover { border-color: var(--accent); }
+    .news-item .news-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent2);
+      margin-top: 0.35rem; flex-shrink: 0;
+    }
+    .news-item .news-title {
+      font-size: 0.84rem; color: var(--ink); font-weight: 500; line-height: 1.4;
+      text-decoration: none; display: block;
+    }
+    .news-item .news-title:hover { color: var(--accent2); }
+    .news-item .news-source {
+      font-size: 0.7rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .news-empty {
+      text-align: center; padding: 1.2rem; color: var(--muted); font-size: 0.85rem;
+    }
+
+    /* === Video Section === */
+    .video-section { margin-top: 1.2rem; }
+    .video-check-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem; }
+    .video-check-row input[type="checkbox"] {
+      width: 18px; height: 18px; accent-color: var(--accent2); cursor: pointer;
+    }
+    .video-check-row label { font-size: 0.9rem; color: var(--ink); cursor: pointer; font-weight: 600; }
+    .video-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .video-form input {
+      background: var(--bg3); border: 1px solid var(--rule); border-radius: 8px;
+      padding: 0.5rem 0.8rem; color: var(--ink); font-family: var(--font); font-size: 0.84rem;
+    }
+    .video-form input::placeholder { color: var(--muted); }
+    .video-form input:focus { outline: none; border-color: var(--accent); }
+    .video-form .btn-save {
+      background: var(--accent); color: #fff; border: none; border-radius: 8px;
+      padding: 0.45rem 1rem; font-family: var(--font); font-size: 0.8rem;
+      cursor: pointer; font-weight: 600; align-self: flex-start;
+    }
+    .video-form .btn-save:hover { background: #5b4dd1; }
+    .video-list { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
+    .video-list-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(0,206,201,0.08); border: 1px solid rgba(0,206,201,0.2);
+      border-radius: 8px; padding: 0.4rem 0.7rem; font-size: 0.8rem;
+    }
+    .video-list-item a { color: var(--accent2); text-decoration: none; }
+    .video-list-item a:hover { text-decoration: underline; }
+    .video-list-item .video-plat {
+      background: rgba(0,206,201,0.15); color: var(--accent2);
+      padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.68rem; font-weight: 600;
+    }
+    .video-list-item .btn-del {
+      margin-left: auto; background: none; border: none; color: var(--danger);
+      cursor: pointer; font-size: 0.75rem; opacity: 0.6;
+    }
+    .video-list-item .btn-del:hover { opacity: 1; }
+
+    /* === Studio View Toggle === */
+    .studio-bar {
+      display: flex; gap: 0.5rem; margin-bottom: 1.2rem; align-items: center;
+    }
+    .studio-bar button {
+      background: var(--bg2); border: 1px solid var(--rule); border-radius: 8px;
+      padding: 0.5rem 1rem; color: var(--muted); font-family: var(--font); font-size: 0.85rem;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .studio-bar button:hover { border-color: var(--accent); color: var(--ink); }
+    .studio-bar button.active {
+      background: rgba(108,92,231,0.15); border-color: var(--accent); color: var(--accent); font-weight: 600;
+    }
+
     /* === Detail Modal === */
     .modal-overlay {
       display: none;
@@ -949,6 +1026,11 @@
         <button class="filter-btn" data-genre="解谜">解谜</button>
         <button class="filter-btn" data-genre="模拟">模拟</button>
       </div>
+    </div>
+
+    <div class="studio-bar" id="studio-bar">
+      <button class="active" data-view="all" onclick="switchStudioView('all')">&#127918; 全部游戏</button>
+      <button data-view="starred" onclick="switchStudioView('starred')">&#9733; 我的收藏</button>
     </div>
 
     <!-- Game Grid View -->
@@ -1832,7 +1914,8 @@
         } else if (statFilter === 'hot') {
           matchStat = g.hot === true;
         }
-        return matchPlatform && matchGenre && matchSearch && matchStat;
+        var matchStudio = studioView === 'all' || (studioView === 'starred' && starredIds.indexOf(g.id) !== -1);
+        return matchPlatform && matchGenre && matchSearch && matchStat && matchStudio;
       });
     }
 
@@ -1858,6 +1941,78 @@
       if (diff <= 14) return 'soon';
       return '';
     }
+
+
+
+    // === Video Data ===
+    var gameVideos = JSON.parse(localStorage.getItem('game-videos') || '{}');
+    function getGameVideos(gameId) { return gameVideos[gameId] || []; }
+    function hasVideo(gameId) { return (gameVideos[gameId] || []).length > 0; }
+    function getVideoCount() {
+      var count = 0;
+      Object.keys(gameVideos).forEach(function(k) { count += gameVideos[k].length; });
+      return count;
+    }
+    function getStarredVideoCount() {
+      var count = 0;
+      starredIds.forEach(function(id) {
+        if (gameVideos[id]) count += gameVideos[id].length;
+      });
+      return count;
+    }
+    function addVideo(gameId, url, title) {
+      if (!url.trim()) return;
+      if (!gameVideos[gameId]) gameVideos[gameId] = [];
+      var platform = url.indexOf('bilibili.com') !== -1 || url.indexOf('b23.tv') !== -1 ? 'B站' :
+                     url.indexOf('youtube.com') !== -1 || url.indexOf('youtu.be') !== -1 ? 'YouTube' :
+                     url.indexOf('douyin.com') !== -1 ? '抖音' :
+                     url.indexOf('xiaohongshu.com') !== -1 ? '小红书' : '其他';
+      gameVideos[gameId].push({url: url.trim(), title: title.trim() || '未命名视频', platform: platform, date: new Date().toISOString().slice(0,10)});
+      localStorage.setItem('game-videos', JSON.stringify(gameVideos));
+      updateStats();
+      refresh();
+      openModal(gameId);
+      showToast('视频已添加');
+    }
+    function removeVideo(gameId, idx) {
+      if (gameVideos[gameId]) {
+        gameVideos[gameId].splice(idx, 1);
+        if (gameVideos[gameId].length === 0) delete gameVideos[gameId];
+        localStorage.setItem('game-videos', JSON.stringify(gameVideos));
+        updateStats();
+        refresh();
+        openModal(gameId);
+        showToast('视频已移除');
+      }
+    }
+    window.removeVideo = removeVideo;
+
+    // === Game News Data ===
+    var gameNews = {
+      23: [
+        {title: "《光环：战役进化》IGN 7分：重走老路之作", url: "https://m.doyo.cn/article/548811", source: "逗游网/IGN", date: "2026-07-28"},
+        {title: "《光环：战役进化》正式发布并支持DLSS", url: "https://games.sina.cn/esports/2026-07-29/edetail-inikmumm0022557.d.html", source: "新浪游戏", date: "2026-07-28"},
+        {title: "高级版已开启抢先体验，7月28日正式发售", url: "http://m.toutiao.com/group/7665932312177132066/", source: "今日头条", date: "2026-07-23"},
+        {title: "从97分神坛跌落！媒体评分创系列新低", url: "http://m.toutiao.com/group/7666358716068790834/", source: "今日头条", date: "2026-07-28"}
+      ],
+      24: [
+        {title: "雾影猎人登Steam，虚幻五搜打撤，黑暗奇幻新体验", url: "http://m.toutiao.com/group/7663402209443086888/", source: "今日头条", date: "2026-07-29"},
+        {title: "Steam新品节登顶佳作 7月30日全球发售", url: "https://m.3dmgame.com/news/202607/3948643.html", source: "3DM", date: "2026-07-29"},
+        {title: "发售宣传片公布，PC配置等详细资讯公开", url: "https://m.3dmgame.com/news/202607/3949308.html", source: "3DM", date: "2026-07-29"},
+        {title: "倒计时1天！明日发售，Steam新品节双榜TOP1", url: "https://wap.gamersky.com/news/Content-2179299.html", source: "游民星空", date: "2026-07-29"}
+      ],
+      38: [
+        {title: "SILENT HILL F套装正式登陆Steam平台", url: "https://tvgame.taobao.com/topic/steamyouxi_222/ae4e6fed311865e00a32a3c81964c447", source: "淘宝游戏", date: "2026-07-20"}
+      ],
+      41: [
+        {title: "Remedy确认《控制》新作《Control Resonant》二季度末发售", url: "http://m.toutiao.com/group/7599150399207834153/", source: "今日头条", date: "2025-12-15"}
+      ],
+      48: [
+        {title: "PS5独占！《漫威金刚狼》9月15日正式发售", url: "https://m.sohu.com/a/989715575_122094388/", source: "搜狐", date: "2026-07-15"},
+        {title: "正式确认9月15日发售，魔形女等经典角色登场", url: "http://m.toutiao.com/group/7610625595004699151/", source: "今日头条", date: "2026-07-15"},
+        {title: "索尼第一方大作开启预购，PSN港服548港币起", url: "http://m.toutiao.com/group/7646950692657136162/", source: "今日头条", date: "2026-07-20"}
+      ]
+    };
 
     // === Cover image helper ===
     function getCoverUrl(g) {
@@ -1920,9 +2075,11 @@
         var newTodayHtml = g.isNewToday
           ? '<div class="new-today-badge"><span class="pulse-dot"></span>今日新增</div>'
           : '';
+        var hasVideoBadge = hasVideo(g.id) ? '<div style="position:absolute;top:0.8rem;left:0.8rem;z-index:3;background:rgba(0,206,201,0.85);color:#0b0e17;font-size:0.65rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:6px;backdrop-filter:blur(4px);">&#127909; 已做</div>' : '';
         return '<div class="game-card' + (starred ? ' starred' : '') + (g.isNewToday ? ' is-new-today' : '') + '" data-id="' + g.id + '" onclick="openModal(' + g.id + ')">' +
           '<div class="priority-indicator ' + getPriorityClass(g.priority) + '"></div>' +
           newTodayHtml +
+          hasVideoBadge +
           '<button class="star-btn' + (starred ? ' active' : '') + '" onclick="event.stopPropagation();toggleStar(' + g.id + ')" title="' + (starred ? '取消关注' : '标记关注') + '">' +
             (starred ? '&#9733;' : '&#9734;') +
           '</button>' +
@@ -2028,6 +2185,7 @@
     function updateStats() {
       document.getElementById('stat-total').textContent = games.length;
       document.getElementById('stat-starred').textContent = starredIds.length;
+      document.getElementById('stat-videos').textContent = getVideoCount();
       var now = new Date();
       var thisMonth = games.filter(function(g) {
         var dateStr = g.date.substring(0, 10);
@@ -2120,6 +2278,16 @@
       }
     }
 
+    // === Studio View ===
+    var studioView = 'all';
+    window.switchStudioView = function(view) {
+      studioView = view;
+      document.querySelectorAll('.studio-bar button').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-view') === view);
+      });
+      refresh();
+    };
+
     // === Refresh ===
     function refresh() {
       var filtered = sortGames(filterGames());
@@ -2202,6 +2370,42 @@
         '</div></div>';
       }
 
+      // News Section
+      var newsList = gameNews[g.id] || [];
+      if (newsList.length > 0) {
+        bodyHtml += '<div class="modal-section news-section"><h3>&#128240; 相关资讯 (' + newsList.length + ')</h3><div class="news-list">' +
+          newsList.map(function(n) {
+            return '<div class="news-item"><span class="news-dot"></span><div>' +
+              '<a href="' + n.url + '" target="_blank" rel="noopener" class="news-title">' + n.title + '</a>' +
+              '<div class="news-source">' + n.source + ' · ' + n.date + '</div>' +
+            '</div></div>';
+          }).join('') +
+        '</div></div>';
+      } else {
+        bodyHtml += '<div class="modal-section news-section"><h3>&#128240; 相关资讯</h3><div class="news-empty">暂无相关资讯</div></div>';
+      }
+
+      // Video Section
+      var videos = getGameVideos(g.id);
+      var hasV = videos.length > 0;
+      bodyHtml += '<div class="modal-section video-section"><h3>&#127909; 视频产出</h3>';
+      if (hasV) {
+        bodyHtml += '<div class="video-list">' +
+          videos.map(function(v, idx) {
+            return '<div class="video-list-item">' +
+              '<span class="video-plat">' + v.platform + '</span>' +
+              '<a href="' + v.url + '" target="_blank" rel="noopener">' + (v.title || '视频链接') + '</a>' +
+              '<button class="btn-del" onclick="event.stopPropagation();removeVideo(' + g.id + ',' + idx + ')">&#10005;</button>' +
+            '</div>';
+          }).join('') +
+        '</div>';
+      }
+      bodyHtml += '<div class="video-form" style="margin-top:' + (hasV ? '0.6rem' : '0') + '">' +
+        '<input type="text" id="video-url-' + g.id + '" placeholder="粘贴视频链接 (B站/YouTube/抖音等)" onkeydown="if(event.key===\'Enter\')addVideoFromModal(' + g.id + ')">' +
+        '<input type="text" id="video-title-' + g.id + '" placeholder="视频标题（可选）" onkeydown="if(event.key===\'Enter\')addVideoFromModal(' + g.id + ')">' +
+        '<button class="btn-save" onclick="addVideoFromModal(' + g.id + ')">&#43; 添加视频</button>' +
+      '</div></div>';
+
       document.getElementById('modal-body').innerHTML = bodyHtml;
       document.getElementById('modal-overlay').classList.add('active');
     };
@@ -2270,10 +2474,19 @@
       });
     });
 
+
+    window.addVideoFromModal = function(gameId) {
+      var url = document.getElementById('video-url-' + gameId).value;
+      var title = document.getElementById('video-title-' + gameId).value;
+      if (!url.trim()) { showToast('请输入视频链接'); return; }
+      addVideo(gameId, url, title);
+    };
+
     // Make functions global
     window.toggleStar = toggleStar;
     window.isTopicSelected = isTopicSelected;
     window.coverError = coverError;
+    window.hasVideo = hasVideo;
 
     // Keyboard shortcut
     document.addEventListener('keydown', function(e) {

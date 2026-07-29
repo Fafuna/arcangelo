@@ -681,6 +681,16 @@
 
     // === Render Table ===
     var editingKey = null;
+    var emojiMap = {
+      '动作': '&#128074;', '射击': '&#128299;', 'RPG': '&#9876;', '策略': '&#127942;',
+      '冒险': '&#127965;', '模拟': '&#128300;', '体育': '&#9917;', '赛车': '&#127950;',
+      '格斗': '&#129354;', '恐怖': '&#128123;', '解谜': '&#128161;', '视觉小说': '&#128220;'
+    };
+    function getGameEmoji(g) {
+      if (g && g.emoji) return g.emoji;
+      if (g && g.genres && g.genres[0] && emojiMap[g.genres[0]]) return emojiMap[g.genres[0]];
+      return '&#127918;';
+    }
     function renderTable() {
       if (allVideos.length === 0) {
         document.getElementById('table-view').innerHTML =
@@ -708,7 +718,7 @@
         var g = item.game;
         var v = item.video;
         var cover = getCoverUrl(g);
-        var emoji = g && g.emoji ? g.emoji : (g && g.genres && g.genres[0] ? {'动作':'&#128074;','射击':'&#128299;','RPG':'&#9876;','策略':'&#127942;','冒险':'&#127965;','模拟':'&#128300;','体育':'&#9917;','赛车':'&#127950;','格斗':'&#129354;','恐怖':'&#128123;','解谜':'&#128161;','视觉小说':'&#128220;'}[g.genres[0]] : '&#127918;') : '&#127918;';
+        var emoji = getGameEmoji(g);
         var gameName = g ? g.name : '未知游戏';
         var gameDate = g ? g.date : '-';
         var rate = calcRate(item.views, item.likes);

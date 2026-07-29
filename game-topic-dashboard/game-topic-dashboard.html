@@ -934,6 +934,17 @@
 </head>
 <body>
 
+  <!-- Nav -->
+  <nav class="top-nav" style="position:sticky;top:0;z-index:50;background:rgba(11,14,23,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);">
+    <div class="top-nav-inner" style="max-width:1400px;margin:0 auto;padding:0.8rem 2rem;display:flex;align-items:center;justify-content:space-between;">
+      <a href="game-topic-dashboard.html" class="nav-brand" style="display:flex;align-items:center;gap:0.6rem;font-size:1.1rem;font-weight:700;color:#fff;text-decoration:none;">&#127918; 游戏选题<span style="color:var(--accent2);">工作台</span></a>
+      <div class="nav-links" style="display:flex;gap:0.5rem;">
+        <a href="game-topic-dashboard.html" style="color:var(--accent);background:rgba(108,92,231,0.1);border:1px solid rgba(108,92,231,0.25);font-weight:600;text-decoration:none;font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:8px;transition:all 0.2s;">&#127968; 游戏列表</a>
+        <a href="video-dashboard.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:8px;transition:all 0.2s;border:1px solid transparent;">&#127909; 视频数据</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -977,7 +988,7 @@
           <div class="stat-label">重点推荐</div>
         </div>
       </div>
-      <div class="stat-card" style="cursor:default;">
+      <div class="stat-card" onclick="location.href='video-dashboard.html'" title="查看视频数据统计" style="cursor:pointer;">
         <div class="stat-icon teal">&#127909;</div>
         <div>
           <div class="stat-value" id="stat-videos">0</div>

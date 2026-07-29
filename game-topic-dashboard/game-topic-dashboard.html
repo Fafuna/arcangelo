@@ -2513,6 +2513,16 @@
       }
     });
 
+    // === Sync games data to localStorage for video-dashboard ===
+    try {
+      localStorage.setItem('games', JSON.stringify(games.map(function(g) {
+        return {
+          id: g.id, name: g.name, date: g.date, genres: g.genres,
+          coverUrl: g.coverUrl || null, officialUrl: g.officialUrl || null, emoji: g.emoji || null
+        };
+      })));
+    } catch(e) {}
+
     // === Init ===
     updateStats();
     refresh();
